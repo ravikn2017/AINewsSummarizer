@@ -1,0 +1,15 @@
+# Daily AI News Summary
+
+### 2026-09-12
+- Young Indian innovators won HACK CORE 2026 with AgroVani AI, aiding farmers with crop residue monetization and product recommendations, organized by IIT Ropar and Syngenta Biologicals. [Read more](https://www.global-agriculture.com/ag-tech-research-news/indian-students-win-hack-core-2026-with-ai-solution-for-smarter-biologicals-adoption/)
+- Recent reports from Anthropic sound alarms over AI self-improvement, with implications discussed in various sectors. [Read more](https://www.modernghana.com/videonews/dw/1/715770)
+- Robot manufacturer Xpeng released a video of its humanoid robot IRON walking off the assembly line, marking a step forward in the humanoid robot arms race. [Read more](https://www.nbcnews.com/video/chinese-company-releases-video-of-humanoid-robot-walking-off-assembly-line-269747269766)
+- U.S. lawmakers are urgently considering legislation to regulate AI risks following a former Anthropic researcher’s warnings about the technology’s potential dangers. [Read more](https://www.washingtonpost.com/technology/2026/09/12/ais-existential-threatsuddenly-has-washingtonsattention/)
+- TSMC reported a 53% revenue increase in August, reflecting strong demand for AI chips amidst various market shifts and economic dynamics. [Read more](https://www.marketbeat.com/instant-alerts/filing-amundi-raises-stock-position-in-ero-copper-corp-ero-2026-09-12/)
+- Significant layoffs have affected 128,536 tech employees globally as major companies like Amazon and Meta adjust amidst AI advancements. [Read more](https://www.livemint.com/companies/news/tech-layoffs-2026-as-ai-takes-center-stage-heres-a-list-of-major-companies-that-laid-off-employees-11789203637160.html)
+
+### 2026-09-11
+- Certinia launched a significant AI update introducing 14 new agents and 71 actions, optimizing the Veda AI Suite for enhanced professional services. [Read more](https://www.accountingtoday.com/list/tech-news-certinia-unveils-major-ai-update-14-new-agents-71-new-actions)
+- Microsoft researchers identified phishing campaigns using AI-generated emails that mimic authentic communication threads to deceive recipients. [Read more](https://www.darkreading.com/cyberattacks-data-breaches/1m-personalized-fraud-emails-3-days)
+- The Pentagon aims to utilize AI for rapid threat assessment in space and missile defense, leveraging AI's analytical strengths. [Read more](https://www.defensenews.com/industry/techwatch/2026/09/11/pentagon-looks-to-ai-to-identify-space-and-missile-threats/)
+- U.S. Senate deliberates on imposing strict AI safety regulations, potentially involving federal courts to halt unsafe AI products' release. [Read more](https://www.reuters.com/legal/litigation/us-senate-negotiators-consider-requiring-ai-firms-mitigate-known-major-risks-2026-09-11/)
