@@ -23,12 +23,14 @@ class ChatbotWithToolNode:
     """
     Returns a chatbot node function
     """
+    # Bind Tavily (or other) tools so the LLM can emit tool_calls
     llm_with_tools = self.llm.bind_tools(tools)
 
     def chatbot_node(state: State):
       """
       Chatbot logic for processing the input state and returning a response
       """
+      # GraphBuilder routes to the tools node when this message contains tool_calls
       return {"messages": [llm_with_tools.invoke(state["messages"])]}
 
     return chatbot_node

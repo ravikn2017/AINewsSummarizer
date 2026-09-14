@@ -3,7 +3,11 @@ from langchain_core.messages import HumanMessage,AIMessage,ToolMessage
 import json
 
 class DisplayResultsStreamlit:
+  """
+  Renders graph output in Streamlit. The layout depends on the selected use case.
+  """
   def __init__(self,usecase,graph,user_message):
+    # usecase: sidebar selection; graph: compiled LangGraph; user_message: chat text or news time frame
     self.usecase = usecase
     self.graph = graph
     self.user_message = user_message
@@ -13,6 +17,7 @@ class DisplayResultsStreamlit:
     graph = self.graph
     user_message = self.user_message
     if usecase == "Basic Chatbot":
+      # Stream tokens/events so the reply appears as the chatbot node finishes
       for event in graph.stream({'messages':("user",user_message)}):
         print(event.values())
         for value in event.values():
@@ -24,8 +29,10 @@ class DisplayResultsStreamlit:
 
     elif usecase == "Chatbot with Tool":
       # Prepare state and invoke the graph
+      # invoke() runs the full loop: chatbot -> optional Tavily tool -> chatbot
       initial_state = {"messages": [user_message]}
       res = graph.invoke(initial_state)
+      # Walk the message history so the user sees the question, tool output, and final answer
       for message in res['messages']:
         if type(message) == HumanMessage:
           with st.chat_message("user"):
@@ -40,12 +47,14 @@ class DisplayResultsStreamlit:
             st.write(message.content)
 
     elif usecase == "AI News":
+      # user_message here is Daily / Weekly / Monthly from the Fetch button
       frequency = self.user_message
+      # save_result writes this same path: ./AINews/{frequency}_summary.md
       AI_NEWS_PATH = f"./AINews/{frequency.lower()}_summary.md"
       with st.spinner("Fetching and summarizing news... ⏳"):
         result = graph.invoke({"messages": frequency})
         try:
-          # Read the markdown file
+          # Read the markdown file produced by the save_result node
           with open(AI_NEWS_PATH, "r") as file:
             markdown_content = file.read()
 

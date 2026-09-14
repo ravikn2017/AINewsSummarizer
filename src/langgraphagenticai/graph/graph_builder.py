@@ -8,8 +8,12 @@ from src.langgraphagenticai.nodes.chatbot_with_Tool_node import ChatbotWithToolN
 from src.langgraphagenticai.nodes.ai_news_node import AINewsNode
 
 class GraphBuilder:
+  """
+  Builds a LangGraph StateGraph for the selected use case.
+  """
   def __init__(self, model):
     self.llm=model
+    # Shared graph; nodes and edges are added by the use-case builders below
     self.graph_builder=StateGraph(State)
 
   def basic_chatbot_build_graph(self):
@@ -22,6 +26,7 @@ class GraphBuilder:
 
     self.basic_chatbot_node=BasicChatbotNode(self.llm)
 
+    # Linear flow: START -> chatbot -> END
     self.graph_builder.add_node("chatbot",self.basic_chatbot_node.process)
     self.graph_builder.add_edge(START,"chatbot")
     self.graph_builder.add_edge("chatbot", END)
@@ -36,14 +41,14 @@ class GraphBuilder:
     with tool capababilities, and sets up conditional and direct edges
     between nodes. The chatbot node is set as the entry point
     """
-    ## Define the tool and tool node
+    ## Define the tool and tool node (Tavily search)
     tools=get_tools()
     tool_node=create_tool_node(tools)
 
     # Define the LLM
     llm=self.llm
 
-    ## Define the chatbot node
+    ## Define the chatbot node with tools bound so it can request a tool call
     obj_chatbot_with_node=ChatbotWithToolNode(llm)
     chatbot_node=obj_chatbot_with_node.create_chatbot(tools)
 
@@ -51,11 +56,15 @@ class GraphBuilder:
     self.graph_builder.add_node("chatbot", chatbot_node)
     self.graph_builder.add_node("tools", tool_node)
     # Define conditional and direct edges
+    # tools_condition routes to "tools" when the LLM requests a tool, otherwise END
     self.graph_builder.add_edge(START, "chatbot")
     self.graph_builder.add_conditional_edges("chatbot", tools_condition)
     self.graph_builder.add_edge("tools", "chatbot")
 
   def ai_news_builder_graph(self):
+    """
+    Builds a linear news pipeline: fetch articles, summarize them, then save markdown.
+    """
     ai_news_node = AINewsNode(self.llm)
 
     ## Add the Nodes
@@ -63,7 +72,7 @@ class GraphBuilder:
     self.graph_builder.add_node("summarize_news", ai_news_node.summarize_news)
     self.graph_builder.add_node("save_result", ai_news_node.save_result)
 
-    # Added the Edges
+    # Added the Edges: fetch -> summarize -> save -> END
     self.graph_builder.set_entry_point("fetch_news") # This is equivalent to (START, "fetch_news")
     self.graph_builder.add_edge("fetch_news", "summarize_news")
     self.graph_builder.add_edge("summarize_news","save_result")
@@ -81,4 +90,5 @@ class GraphBuilder:
     if usecase == "AI News":
       self.ai_news_builder_graph()
 
+    # Compile into a runnable graph
     return self.graph_builder.compile()

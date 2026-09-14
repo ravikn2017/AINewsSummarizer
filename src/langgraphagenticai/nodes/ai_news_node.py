@@ -4,6 +4,9 @@ from tavily import TavilyClient
 from langchain_core.prompts import ChatPromptTemplate
 
 class AINewsNode:
+  """
+  LangGraph nodes for the AI News pipeline: fetch, summarize, save.
+  """
   def __init__(self,llm):
     """
     Initialize the AINewsNode with API keys for Tavily and OpenAI
@@ -24,6 +27,7 @@ class AINewsNode:
     Returns:
       dict: Updated state with 'news_data' key containing fetched news
     """
+    # Frequency comes from the UI time frame (Daily / Weekly / Monthly)
     frequency = state["messages"][0].content.lower()
     self.state["frequency"] = frequency
     time_range_map: dict[str, Literal["day", "week", "month", "year"]] = {
@@ -34,6 +38,7 @@ class AINewsNode:
     }
     days_map = {"daily": 1, "weekly": 7, "monthly": 30, "year": 366}
 
+    # Tavily news search scoped to the selected time range
     response = self.tavily.search(
       query="Top Artificial Intelligence (AI) technology news globally and in India",
       topic="news",
@@ -60,6 +65,7 @@ class AINewsNode:
 
     news_items = self.state['news_data']
 
+    # Ask the LLM to turn Tavily results into dated markdown bullets
     prompt_template = ChatPromptTemplate.from_messages([
       ("system", """Summarize AI news articles into markdown format. For each item include:
       - Date in **YYYY-MM-DD** format in IST timezone
@@ -83,6 +89,9 @@ class AINewsNode:
     return self.state
 
   def save_result(self, state):
+    """
+    Write the markdown summary to ./AINews/{frequency}_summary.md
+    """
     frequency = self.state["frequency"]
     summary = self.state["summary"]
     import os

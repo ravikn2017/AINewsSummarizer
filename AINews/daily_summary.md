@@ -1,15 +1,10 @@
 # Daily AI News Summary
 
-### 2026-09-12
-- Young Indian innovators won HACK CORE 2026 with AgroVani AI, aiding farmers with crop residue monetization and product recommendations, organized by IIT Ropar and Syngenta Biologicals. [Read more](https://www.global-agriculture.com/ag-tech-research-news/indian-students-win-hack-core-2026-with-ai-solution-for-smarter-biologicals-adoption/)
-- Recent reports from Anthropic sound alarms over AI self-improvement, with implications discussed in various sectors. [Read more](https://www.modernghana.com/videonews/dw/1/715770)
-- Robot manufacturer Xpeng released a video of its humanoid robot IRON walking off the assembly line, marking a step forward in the humanoid robot arms race. [Read more](https://www.nbcnews.com/video/chinese-company-releases-video-of-humanoid-robot-walking-off-assembly-line-269747269766)
-- U.S. lawmakers are urgently considering legislation to regulate AI risks following a former Anthropic researcher’s warnings about the technology’s potential dangers. [Read more](https://www.washingtonpost.com/technology/2026/09/12/ais-existential-threatsuddenly-has-washingtonsattention/)
-- TSMC reported a 53% revenue increase in August, reflecting strong demand for AI chips amidst various market shifts and economic dynamics. [Read more](https://www.marketbeat.com/instant-alerts/filing-amundi-raises-stock-position-in-ero-copper-corp-ero-2026-09-12/)
-- Significant layoffs have affected 128,536 tech employees globally as major companies like Amazon and Meta adjust amidst AI advancements. [Read more](https://www.livemint.com/companies/news/tech-layoffs-2026-as-ai-takes-center-stage-heres-a-list-of-major-companies-that-laid-off-employees-11789203637160.html)
-
-### 2026-09-11
-- Certinia launched a significant AI update introducing 14 new agents and 71 actions, optimizing the Veda AI Suite for enhanced professional services. [Read more](https://www.accountingtoday.com/list/tech-news-certinia-unveils-major-ai-update-14-new-agents-71-new-actions)
-- Microsoft researchers identified phishing campaigns using AI-generated emails that mimic authentic communication threads to deceive recipients. [Read more](https://www.darkreading.com/cyberattacks-data-breaches/1m-personalized-fraud-emails-3-days)
-- The Pentagon aims to utilize AI for rapid threat assessment in space and missile defense, leveraging AI's analytical strengths. [Read more](https://www.defensenews.com/industry/techwatch/2026/09/11/pentagon-looks-to-ai-to-identify-space-and-missile-threats/)
-- U.S. Senate deliberates on imposing strict AI safety regulations, potentially involving federal courts to halt unsafe AI products' release. [Read more](https://www.reuters.com/legal/litigation/us-senate-negotiators-consider-requiring-ai-firms-mitigate-known-major-risks-2026-09-11/)
+### 2026-09-14
+- [India drives SAP's global AI R&D and agent development, with 80% of SAP's AI agents being developed in India.](https://datacenters.economictimes.indiatimes.com/news/ai-compute-infrastructure/india-drives-saps-global-ai-rd-and-agent-development/134232896)
+- [Asian AI stocks drop after leading lab CEOs, including Elon Musk and Sam Altman, back calls to slow AI development.](https://www.business-standard.com/technology/tech-news/asian-ai-stocks-slide-as-top-lab-ceos-call-for-slower-development-of-tech-126091400135_1.html)
+- [China's intelligence chief warns of AI risks, emphasizing global governance amid US model advancements.](https://www.scmp.com/news/china/politics/article/3367349/chinas-intelligence-chief-warns-risks-ai-new-arena-strategic-rivalry)
+- [Roger Spitz ranked 6th on Thinkers360's 2026 Management Leaderboard, recognized for foresight in management and AI ethics.](https://www.einnews.com/pr_news/942036123/roger-spitz-ranked-6-on-thinkers360-s-2026-management-leaderboard-as-foresight-enters-management-practice)
+- [Xi Jinping proposes AI-powered industrialization at BRICS summit, as China aims to enhance supply chain cooperation.](https://www.japantimes.co.jp/news/2026/09/14/world/politics/xi-ai-brics-summit-china-us)
+- [Frontier AI introduces terms like recursive self-improvement and agentic misalignment to the AI lexicon.](https://indianexpress.com/article/explained/explained-ai/frontier-ai-5-new-terms-10877276)
+- [The US leads a new index ranking countries based on AI deployment for social and environmental benefits.](https://sustainabilityonline.net/news/us-leads-countries-in-using-ai-for-social-good-and-sustainability)

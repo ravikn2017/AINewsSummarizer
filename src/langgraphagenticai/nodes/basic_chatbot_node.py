@@ -11,4 +11,5 @@ class BasicChatbotNode:
     """
     Processes the input state and generates a chatbot response
     """
+    # Return an AI message; add_messages appends it to state["messages"]
     return {"messages":self.llm.invoke(state['messages'])}
